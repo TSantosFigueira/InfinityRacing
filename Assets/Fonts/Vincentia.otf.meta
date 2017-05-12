@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 44a39f7270931b84fb3965bc54c479f0
+timeCreated: 1494557853
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Vincentia
+  fontNames:
+  - Vincentia
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
