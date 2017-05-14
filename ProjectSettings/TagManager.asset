@@ -9,6 +9,8 @@ TagManager:
   - collectible
   - healthBar
   - UIManager
+  - Quit
+  - Pause
   layers:
   - Default
   - TransparentFX
