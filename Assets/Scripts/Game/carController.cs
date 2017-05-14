@@ -5,7 +5,7 @@ using System.Collections;
 public class carController : MonoBehaviour
 {
     public float carSpeed;  //!< Player's velocity
-    public static int life;
+    public static int life = 100; //!< Player's health
     public static int score; //!< Player's score
 
     private bool currentPlatformAndroid = false;
@@ -30,6 +30,7 @@ public class carController : MonoBehaviour
     {
         position = transform.position;
         score = 0;
+        life = 100;
         // Determines maximum distance player can go left/rigt based on screen size
         cam = Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z));
         maxPos = -cam.x - 0.5f;
@@ -52,7 +53,8 @@ public class carController : MonoBehaviour
         col.gameObject.SetActive(false);
         if (col.gameObject.tag == "enemy")
         {
-            life--;
+            PlaySoundEffect("damage");
+            GameObject.FindGameObjectWithTag("healthBar").GetComponent<HealthBar>().CauseDamage(10);
         }
         if(col.gameObject.tag == "collectible")
         {
@@ -62,16 +64,24 @@ public class carController : MonoBehaviour
 
     public void MoveLeft ()
     {
+        PlaySoundEffect("moveButton");
         rb.velocity = new Vector2(-carSpeed, 0);
     }
 
     public void MoveRight ()
     {
+        PlaySoundEffect("moveButton");
         rb.velocity = new Vector2(carSpeed, 0);
     }
 
     public void SetVelocityZero ()
     {
         rb.velocity = Vector2.zero;
+    }
+
+    private void PlaySoundEffect(string sound)
+    {
+        if (GameObject.FindGameObjectWithTag("soundManager"))
+            GameObject.FindGameObjectWithTag("soundManager").GetComponent<Sounds>().playSound(sound, 0.5f);
     }
 }

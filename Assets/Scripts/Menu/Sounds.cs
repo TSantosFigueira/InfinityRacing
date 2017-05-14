@@ -14,7 +14,12 @@ public class Sounds : MonoBehaviour {
 
     private Dictionary<string, AudioClip> soundsDict = new Dictionary<string, AudioClip>();
 
-	void Start () {
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
+    void Start () {
         source = GetComponent<AudioSource>();
 
         // checks if the two arrays have the same length to guarantee correspondence
