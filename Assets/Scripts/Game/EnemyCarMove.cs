@@ -7,7 +7,8 @@ public class EnemyCarMove : MonoBehaviour {
 	public float speed = 8f;
 
 	void Update () {
-		transform.Translate (new Vector3(0, 1, 0) * -speed * Time.deltaTime);
+        if(!Pause.isPaused)
+		    transform.Translate (new Vector3(0, 1, 0) * -speed * Time.deltaTime);
 	}
 
     private void OnCollisionEnter2D(Collision2D collision)

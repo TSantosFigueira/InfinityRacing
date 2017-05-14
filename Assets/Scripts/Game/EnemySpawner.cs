@@ -23,7 +23,7 @@ public class EnemySpawner : MonoBehaviour {
 	void Update () {
 
 		timer -= Time.deltaTime;
-		if (timer <= 0) {
+		if (timer <= 0 && !Pause.isPaused) {
 			Vector3 carPos = new Vector3(Random.Range(-maxPos, maxPos),transform.position.y,transform.position.z);
            
             // selects random pool from pools list

@@ -20,6 +20,12 @@ public class HealthBar : MonoBehaviour {
     private void UpdateHealthBar()
     {
         currentHealth = damageTaken / maxHealth;
+       
+        if(currentHealth == 0)
+        {
+            GameObject.FindGameObjectWithTag("UIManager").GetComponent<PopUpDisplayer>().DisplayCredits(false);
+        }
+
         currentHealthImage.rectTransform.localScale = new Vector2(currentHealth, 1);
     }
 

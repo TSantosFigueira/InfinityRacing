@@ -64,14 +64,20 @@ public class carController : MonoBehaviour
 
     public void MoveLeft ()
     {
-        PlaySoundEffect("moveButton");
-        rb.velocity = new Vector2(-carSpeed, 0);
+        if (!Pause.isPaused)
+        {
+            PlaySoundEffect("moveButton");
+            rb.velocity = new Vector2(-carSpeed, 0);
+        }      
     }
 
     public void MoveRight ()
     {
-        PlaySoundEffect("moveButton");
-        rb.velocity = new Vector2(carSpeed, 0);
+        if (!Pause.isPaused)
+        {
+            PlaySoundEffect("moveButton");
+            rb.velocity = new Vector2(carSpeed, 0);
+        }   
     }
 
     public void SetVelocityZero ()

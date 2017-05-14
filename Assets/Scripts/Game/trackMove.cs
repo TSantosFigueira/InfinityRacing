@@ -11,13 +11,16 @@ public class trackMove : MonoBehaviour {
 
     void Start()
     {    
-      gameObject.GetComponent<MeshRenderer>().material = phaseTrack;              
+        gameObject.GetComponent<MeshRenderer>().material = phaseTrack;              
     }
 	
 
 	void Update () {
-		offset = new Vector2 (0, Time.time * speed);
-
-		GetComponent<Renderer> ().material.mainTextureOffset = offset;
+        if (!Pause.isPaused)
+        {
+            offset = new Vector2(0, Time.time * speed);
+            GetComponent<Renderer>().material.mainTextureOffset = offset;
+        }
+	
 	}
 }
