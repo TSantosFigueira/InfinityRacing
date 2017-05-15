@@ -11,6 +11,8 @@ TagManager:
   - UIManager
   - Quit
   - Pause
+  - soundButton
+  - musicPlayer
   layers:
   - Default
   - TransparentFX
