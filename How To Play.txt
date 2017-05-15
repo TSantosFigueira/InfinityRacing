@@ -1,0 +1,7 @@
+How to play
+
+Keys: use arrows on-screen
+Avoid: red incoming cars that come from the top of the screen
+Collect: mechanical pieces that come from the top of the screen
+
+Aspect ratio -> 9:16 (intended for mobile devices)
