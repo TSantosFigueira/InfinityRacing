@@ -10,7 +10,7 @@ public class carController : MonoBehaviour
 
     private bool currentPlatformAndroid = false;
     private float maxPos;  //!< Maximum limits player can go left or right
-    private Vector3 cam; 
+    private Vector3 cam;
     Vector3 position;
     private Rigidbody2D rb;
 
@@ -56,31 +56,31 @@ public class carController : MonoBehaviour
             PlaySoundEffect("damage");
             GameObject.FindGameObjectWithTag("healthBar").GetComponent<HealthBar>().CauseDamage(10);
         }
-        if(col.gameObject.tag == "collectible")
+        if (col.gameObject.tag == "collectible")
         {
             score += 100;
         }
     }
 
-    public void MoveLeft ()
+    public void MoveLeft()
     {
         if (!Pause.isPaused)
         {
             PlaySoundEffect("moveButton");
             rb.velocity = new Vector2(-carSpeed, 0);
-        }      
+        }
     }
 
-    public void MoveRight ()
+    public void MoveRight()
     {
         if (!Pause.isPaused)
         {
             PlaySoundEffect("moveButton");
             rb.velocity = new Vector2(carSpeed, 0);
-        }   
+        }
     }
 
-    public void SetVelocityZero ()
+    public void SetVelocityZero()
     {
         rb.velocity = Vector2.zero;
     }
